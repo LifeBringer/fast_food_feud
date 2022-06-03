@@ -48,3 +48,4 @@ npm run dev
 
 
 ### Walkthrough
+![2022-06-03 at 2 15 52 - Red Albatross](https://user-images.githubusercontent.com/1930836/171797855-1df861e5-2e98-4674-9afc-0c51df522207.gif)
