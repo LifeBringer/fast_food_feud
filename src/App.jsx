@@ -9,7 +9,7 @@ import { NutritionalLabel } from "./components/NutritionalLabel/NutritionalLabel
 import { CategoryColumn } from "./components/CategoryColumn/CategoryColumn"
 import { RestaurantsRow } from "./components/RestaurantsRow/RestaurantsRow"
 import { MenuDisplay } from "./components/MenuDisplay/MenuDisplay"
-import { DataSource } from "./data/datasource"
+import { DataSource } from "./components/DataSource/DataSource"
 
 // don't move this!
 export const appInfo = {
