@@ -44,7 +44,7 @@ npm run dev
 ### Stretch Features
  - [x] Render different instructions messages depending on state
  - [x] Add additional `onClick` handlers to `Chip`
- - [ ] Break sections of the `App.jsx` file into their own components (`CategoryColumn.jsx`, `RestaurantsRow.jsx`, `MenuDisplay.jsx`, and `DataSource.jsx`).
+ - [x] Break sections of the `App.jsx` file into their own components (`CategoryColumn.jsx`, `RestaurantsRow.jsx`, `MenuDisplay.jsx`, and `DataSource.jsx`).
 
 
 ### Walkthrough
