@@ -5,7 +5,7 @@ export function Chip({
   label = "", 
   isActive = false,
   onClick = () => {}, 
-  onClose = () => {isActive = !isActive;} 
+  onClose = () => {} 
   }) {
   return (
     <button className={`chip ${isActive ? "active" : ""}`} onClick={onClick}>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 // IMPORT ANY NEEDED COMPONENTS HERE
 import { createDataSet } from "./data/dataset";
 import "./App.css";
@@ -28,9 +29,25 @@ export const appInfo = {
 const { data, categories, restaurants } = createDataSet();
 
 export function App() {
-  const [selectedCategory, setSelectedCategory] = React.useState(null);
-  const [selectedRestaurant, setSelectedRestaurant] = React.useState(null);
-  const [selectedItem, setSelectedItem] = React.useState(null);
+  const [categoryState, setSelectedCategory] = useState(null);
+  const [restaurantState, setSelectedRestaurant] = useState(null);
+  const [itemState, setSelectedItem] = useState(null);
+  const [actionState, setAction] = useState("start")
+
+  useEffect(() => {
+    if (!categoryState && !restaurantState) {
+      setAction("start")
+    } else if (categoryState && !restaurantState) {
+      setAction("onlyCategory")
+    } else if (!categoryState && restaurantState) {
+      setAction("onlyRestaurant")
+    } else if (!itemState) {
+      setAction("noSelectedItem")
+    } else {
+      setAction("allSelected")
+    }
+
+  }, [categoryState, restaurantState, itemState])
 
   const selectCategory = (category) => {
     setSelectedItem(null);
@@ -44,8 +61,8 @@ export function App() {
 
   const currentMenuItems = data.filter((item) => {
     return (
-      item.food_category === selectedCategory &&
-      item.restaurant === selectedRestaurant
+      item.food_category === categoryState &&
+      item.restaurant === restaurantState
     );
   });
 
@@ -55,7 +72,7 @@ export function App() {
       <CategoriesColumn
         categories={categories}
         selectCategory={selectCategory}
-        selectedCategory={selectedCategory}
+        selectedCategory={categoryState}
       />
 
       {/* MAIN COLUMN */}
@@ -71,16 +88,16 @@ export function App() {
         <RestaurantsRow
           restaurants={restaurants}
           selectRestaurant={selectRestaurant}
-          selectedRestaurant={selectedRestaurant}
+          selectedRestaurant={restaurantState}
         />
 
         {/* INSTRUCTIONS GO HERE */}
-        <Instructions instructions={appInfo.instructions.start} />
+        <Instructions instructions={appInfo.instructions[actionState]} />
 
         {/* MENU DISPLAY */}
         <MenuDisplay
           menuItems={currentMenuItems}
-          selectedItem={selectedItem}
+          selectedItem={itemState}
           setSelectedItem={setSelectedItem}
         />
 
