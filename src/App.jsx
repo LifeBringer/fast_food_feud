@@ -34,6 +34,7 @@ export function App() {
   const [itemState, setSelectedItem] = useState(null);
   const [actionState, setAction] = useState("start")
 
+  // Updating instructions depending on selection state of each button
   useEffect(() => {
     if (!categoryState && !restaurantState) {
       setAction("start")
@@ -49,6 +50,7 @@ export function App() {
 
   }, [categoryState, restaurantState, itemState])
 
+  // Resets buttons states when changing button states
   const selectCategory = (category) => {
     setSelectedItem(null);
     setSelectedCategory(category);
@@ -59,6 +61,7 @@ export function App() {
     setSelectedRestaurant(restaurant);
   };
 
+  // Filter nutrition based on selections
   const currentMenuItems = data.filter((item) => {
     return (
       item.food_category === categoryState &&
