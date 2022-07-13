@@ -35,7 +35,7 @@ export function App() {
   const [actionState, setAction] = useState("start")
 
   // Updating instructions depending on selection state of each button
-  useEffect(() => {
+  /* useEffect(() => {
     if (!categoryState && !restaurantState) {
       setAction("start")
     } else if (categoryState && !restaurantState) {
@@ -48,7 +48,7 @@ export function App() {
       setAction("allSelected")
     }
 
-  }, [categoryState, restaurantState, itemState])
+  }, [categoryState, restaurantState, itemState]) */
 
   // Resets buttons states when changing button states
   const selectCategory = (category) => {
@@ -95,8 +95,8 @@ export function App() {
         />
 
         {/* INSTRUCTIONS GO HERE */}
-        <Instructions instructions={appInfo.instructions[actionState]} />
-
+        {/* <Instructions instructions={appInfo.instructions[actionState]} /> */}
+        <Instructions instructions={appInfo.instructions.start} />
         {/* MENU DISPLAY */}
         <MenuDisplay
           menuItems={currentMenuItems}
@@ -106,7 +106,6 @@ export function App() {
 
         {/* DATA SOURCE */}
         <DataSource appInfo={appInfo} />
-        
       </div>
     </main>
   );
