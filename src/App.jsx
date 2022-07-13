@@ -34,7 +34,7 @@ export function App() {
   const [itemState, setSelectedItem] = useState(null);
   const [actionState, setAction] = useState("start")
 
-  // Updating instructions depending on selection state of each button
+  // Updating instructions depending on selection state of each button - test
   /* useEffect(() => {
     if (!categoryState && !restaurantState) {
       setAction("start")
