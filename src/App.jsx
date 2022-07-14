@@ -33,22 +33,12 @@ export function App() {
   const [restaurantState, setSelectedRestaurant] = useState(null);
   const [itemState, setSelectedItem] = useState(null);
   const [actionState, setAction] = useState("start")
+  
+  
 
-  // Updating instructions depending on selection state of each button - test
-  /* useEffect(() => {
-    if (!categoryState && !restaurantState) {
-      setAction("start")
-    } else if (categoryState && !restaurantState) {
-      setAction("onlyCategory")
-    } else if (!categoryState && restaurantState) {
-      setAction("onlyRestaurant")
-    } else if (!itemState) {
-      setAction("noSelectedItem")
-    } else {
-      setAction("allSelected")
-    }
 
-  }, [categoryState, restaurantState, itemState]) */
+
+  // Updating instructions depending on selection state of each button
 
   // Resets buttons states when changing button states
   const selectCategory = (category) => {

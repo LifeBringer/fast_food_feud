@@ -42,7 +42,7 @@ npm run dev
  - [x] `Chip` component updates based on the restaurant and category selected by the user.
  - [x] When a menu item is selected, the `NutritionalLabel` component is displayed with the nutritional facts of the item.
 ### Stretch Features
- - [x] Render different instructions messages depending on state
+ - [ ] Render different instructions messages depending on state
  - [x] Add additional `onClick` handlers to `Chip`
  - [x] Break sections of the `App.jsx` file into their own components (`CategoryColumn.jsx`, `RestaurantsRow.jsx`, `MenuDisplay.jsx`, and `DataSource.jsx`).
 
