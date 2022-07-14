@@ -32,8 +32,9 @@ export function App() {
   const [categoryState, setSelectedCategory] = useState(null);
   const [restaurantState, setSelectedRestaurant] = useState(null);
   const [itemState, setSelectedItem] = useState(null);
-  const [actionState, setAction] = useState("start")
-  
+  const [actionState, setAction] = useState("start");
+
+  // Updating instructions depending on selection state of each button
   useEffect(() => {
     if (!categoryState && !restaurantState && !itemState) {
       setAction("start");
@@ -47,9 +48,6 @@ export function App() {
       setAction("allSelected");
     }
   }, [categoryState, restaurantState, itemState]);
-  
-
-  // Updating instructions depending on selection state of each button
 
   // Resets buttons states when changing button states
   const selectCategory = (category) => {
@@ -96,8 +94,8 @@ export function App() {
         />
 
         {/* INSTRUCTIONS GO HERE */}
-        {/* <Instructions instructions={appInfo.instructions[actionState]} /> */}
-        <Instructions instructions={appInfo.instructions.start} />
+        <Instructions instructions={appInfo.instructions[actionState]} />
+        
         {/* MENU DISPLAY */}
         <MenuDisplay
           menuItems={currentMenuItems}
